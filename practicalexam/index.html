@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Video Chat</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="header d-flex justify-content-between align-items-center">
+        <h4 class="m-0">Virtual Classroom Sentiment Analyzer</h4>
+        <div>
+           
+            
+            <button class="btn btn-start rounded-pill" type="button" onclick="init()">Start Camera</button>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-7 mb-4">
+                <div class="video-section text-center">
+                    <h5>User Camera Feed</h5>
+                    
+                    <div id="video-wrapper" class="my-3">
+                        <div id="webcam-container"></div>
+                        <div id="effect-overlay"></div> 
+                    </div>
+                    
+                    <h6 class="text-start mt-4 text-muted">Raw Model Probabilities:</h6>
+                    <div id="label-container" class="text-start d-flex flex-wrap gap-2"></div>
+                </div>
+            </div>
+
+            <div class="col-md-5">
+                <div class="chat-section">
+                    <h5>Reaction History</h5>
+                    <p class="text-muted small mb-2">Logs expressions detected above 90% confidence.</p>
+                    <div id="chat-box"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

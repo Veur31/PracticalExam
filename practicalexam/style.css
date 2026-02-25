@@ -1,0 +1,111 @@
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.header {
+    background: linear-gradient(135deg, #6a1b9a, #e91e63);
+    color: white;
+    padding: 15px 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.video-section {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-top: 5px solid #9c27b0;
+}
+
+/* Wrapper to hold the canvas and overlay together */
+#video-wrapper {
+    position: relative;
+    display: inline-block;
+    max-width: 400px;
+    width: 100%;
+}
+
+#webcam-container canvas {
+    width: 100%;
+    border-radius: 8px;
+    border: 3px solid #fce4ec;
+}
+
+/* The invisible layer over the video for emojis */
+#effect-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 999; /* Forced to the front so emojis are never hidden */
+}
+
+/* The floating emoji styling and animation */
+.emoji-effect {
+    position: absolute;
+    font-size: 3rem;
+    filter: drop-shadow(0px 0px 8px rgba(233, 30, 99, 0.8));
+    animation: floatUp 2s ease-out forwards;
+    bottom: 20px; /* Starts slightly higher up so it doesn't get cut off at the bottom */
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(20px) scale(0.5); opacity: 0; }
+    20% { transform: translateY(0px) scale(1.2); opacity: 1; }
+    80% { transform: translateY(-150px) scale(1); opacity: 0.8; }
+    100% { transform: translateY(-200px) scale(0.8); opacity: 0; }
+}
+
+.chat-section {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    border-top: 5px solid #e91e63;
+}
+
+#chat-box {
+    flex-grow: 1;
+    overflow-y: auto;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #fafafa;
+}
+
+.log-entry {
+    background: white;
+    border-left: 4px solid #d81b60;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    font-size: 0.95rem;
+}
+
+.btn-start {
+    background-color: #d81b60;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 10px 25px;
+    transition: all 0.3s ease;
+}
+
+.btn-start:hover {
+    background-color: #ad1457;
+    color: white;
+    transform: scale(1.05);
+}
+
+#label-container div {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 2px;
+}
